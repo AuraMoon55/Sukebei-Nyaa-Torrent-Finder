@@ -1,5 +1,5 @@
 from .get_response import nyaa_id, sukebei_id
-from bot.halo.dem import sudo_only
+from bot.halo.dem import sudo_chat_only
 from bot import NYAA, botname
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
@@ -8,7 +8,7 @@ INVALID_TEXT = """
 No ID found!
 """
 
-@sudo_only
+@sudo_chat_only
 @NYAA.on_message(filters.command(["magnet", f"magnet@{botname}"], prefixes = "/") & ~filters.edited)
 async def get_magnet(client, message):
     query = message.text.split(maxsplit = 2)
