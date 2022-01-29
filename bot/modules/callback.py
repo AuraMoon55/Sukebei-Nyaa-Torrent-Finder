@@ -1,4 +1,4 @@
-from bot import NYAA
+from bot import NYAA, AUTH_CHAT
 from .get_response import nyaa, nyaa_id, sukebei, sukebei_id
 from pyrogram import filters
 from pyrogram.types import CallbackQuery
@@ -29,7 +29,7 @@ async def _callback(client, CallbackQuery):
                 except Exception:
                     break
             text = "Send **/magnet <unique_id>** from the above list to get the torrent info and magnet link."
-            await NYAA.send_message(chat_id = CallbackQuery.from_user.id, text = text)
+            await NYAA.send_message(chat_id = AUTH_CHAT, text = text)
     elif len(query) == 2:
         if query[0] == "nyaa":
             data = await nyaa_id(query[-1])
