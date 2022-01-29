@@ -1,10 +1,10 @@
 from pyrogram import Client
 import os
 
-API_ID = int(os.environ.get("API_ID", ""))
-API_HASH = os.environ.get("API_HASH", "")
-BOT_TOKEN = os.environ.get("TOKEM", "")
-AUTH_CHAT = int(os.environ.get("AUTH_CHAT", ""))
+API_ID = 2919867
+API_HASH = "90dd95178a8d13a69bfdbc7da68d23a4"
+BOT_TOKEN = "5015207309:AAEoifISfnyTYGGZkPLWnXpMQVGM7mEkGf8"
+AUTH_CHAT = -613675532
 
 NYAA = Client("Nyaa", api_id = API_ID, api_hash = API_HASH, bot_token = BOT_TOKEN)
 with NYAA:
