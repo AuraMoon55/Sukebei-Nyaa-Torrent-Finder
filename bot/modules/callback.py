@@ -1,8 +1,10 @@
 from bot import NYAA, AUTH_CHAT
 from .get_response import nyaa, nyaa_id, sukebei, sukebei_id
 from pyrogram import filters
+from bot.halo.dem import sudo_chat_only
 from pyrogram.types import CallbackQuery
 
+@sudo_chat_only
 @NYAA.on_callback_query()
 async def _callback(client, CallbackQuery):
     query = CallbackQuery.data.split(maxsplit = 2)
